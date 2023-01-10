@@ -10,3 +10,7 @@ pip install pipwin==0.5.2 #Не надо
 pipwin install pyaudio #Не работает
 
 pip install PyAudio==0.2.13
+
+pip install pydub==0.25.1 #Для конвертации и обработки записи
+
+pip install ffmpeg == 1.4 #Для конвертации и обработки записи
