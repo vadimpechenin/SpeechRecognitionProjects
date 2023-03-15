@@ -5,9 +5,10 @@ import os
 from pydub import AudioSegment
 #import ffmpeg
 
-def get_wav():#videoname: str
-	m4a_file = "D:\\PYTHON\\Programms\\audio\\speech.m4a"
-	wav_filename = r"D:\\PYTHON\\Programms\\audio\\speech_.wav"
+def get_wav(file_name, new_name):#videoname: str
+	path = "D:\\PYTHON\\Programms\\audio"
+	m4a_file = os.path.join(path, file_name)
+	wav_filename = r"D:\\PYTHON\\Programms\\audio\\" + new_name
 	track = AudioSegment.from_file(m4a_file, format='m4a')
 	file_handle = track.export(wav_filename, format='wav')
 
@@ -15,5 +16,10 @@ def get_wav():#videoname: str
 	com2 = "ffmpeg -i speech.mp3 speech.wav"
 	os.system(com1)
 	os.system(com2)"""
-
-get_wav()
+if (1==1):
+	file_name = "speech.m4a"
+	new_name = "speech_.wav"
+else:
+	file_name = "20230315_121601.m4a"
+	new_name = "20230315_121601_.wav"
+get_wav(file_name, new_name)

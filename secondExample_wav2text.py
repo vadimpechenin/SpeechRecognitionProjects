@@ -5,7 +5,7 @@ from datetime import datetime
 
 from pydub import AudioSegment
 from pydub.silence import split_on_silence
-
+#Необходимо сначала сконвертировать waw файл
 
 def wav2text(sound, r, mydoc,folder_name, language="ru-RU"):
     # split audio sound where silence is 700 miliseconds or more and get chunks
@@ -42,8 +42,11 @@ def wav2text(sound, r, mydoc,folder_name, language="ru-RU"):
         print(datetime.now() - start_time)
 
 folder_name = "D:\\PYTHON\\Programms\\audio"
-AUDIO_FILE  = os.path.join(folder_name,"speech.wav")
-
+if (1==0):
+	file_name = "speech.waw"
+else:
+	file_name = "20230315_121601.wav"
+AUDIO_FILE  = os.path.join(folder_name,file_name)
 # open the audio file using pydub
 sound = AudioSegment.from_wav(AUDIO_FILE)
 #TODO почему то не работает импорт m4a, хотя должен
