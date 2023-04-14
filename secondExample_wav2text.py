@@ -37,7 +37,7 @@ def wav2text(sound, r, mydoc,folder_name, language="ru-RU"):
                 text = f"{text.capitalize()}. "
                 print(" -- :", text)
                 mydoc.add_paragraph(text)
-        mydoc.save("doc\\speech.docx")
+        mydoc.save("doc\\speech_BOL.docx")
         print("Время выполнения: ")
         print(datetime.now() - start_time)
 
@@ -45,7 +45,7 @@ folder_name = "D:\\PYTHON\\Programms\\audio"
 if (1==0):
 	file_name = "speech.waw"
 else:
-	file_name = "20230315_121601.wav"
+	file_name = "speech_BOL.wav"
 AUDIO_FILE  = os.path.join(folder_name,file_name)
 # open the audio file using pydub
 sound = AudioSegment.from_wav(AUDIO_FILE)
